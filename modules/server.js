@@ -15,7 +15,7 @@ exports.start = function(route,handle) {
 		var pathname = url.parse(request.url).pathname;
 		console.log("Request for " + pathname + " received.");
 		
-		route(handle, pathname ,response);
+		route(handle, pathname ,response, request);		
 	}
 	
 	// Start the server and fire the onRequest function on request.

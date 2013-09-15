@@ -3,10 +3,10 @@
  */
 
 // Route to the desired path
-exports.route = function(handle, pathname, response) {
+exports.route = function(handle, pathname, response, request) {
 	console.log("About to route a request for " + pathname);
 	if (typeof handle[pathname] === 'function') {
-		handle[pathname](response);
+		handle[pathname](response, request);
 	}
 	else {
 		console.log("No requestHandler found for " + pathname);
